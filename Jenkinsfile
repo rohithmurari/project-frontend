@@ -12,11 +12,11 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         sh 'npm ci'
+        //     }
+        // }
         stage('Build') {
             steps {
                 // Build your JAR file here
