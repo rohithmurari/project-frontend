@@ -1,0 +1,27 @@
+.profile-image{
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid black;
+    border-radius: 50%;
+
+}
+
+.table{
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+.table tr td{
+    padding: 15px 10px;
+    border:0.5px solid darkgray;
+    border-collapse: collapse;
+}
+
+.profileCard{
+    margin-top: 10px;
+    background-color:rgb(235, 230, 230);
+    border: 3px;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

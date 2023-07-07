@@ -1,0 +1,194 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <mat-card class="mt20 card">
+                <h3 class="mt10 ml20"><i>Instructions</i></h3>
+                <ul><li>
+                    Do not refresh the page
+                </li>
+                <li>If refreshed you will get new quiz test</li>
+                <li>Do not switch tabs</li></ul></mat-card>
+            </div>
+            <div class="col-md-8">
+                <ng-container *ngIf="questions">
+                <h1 class="mt10">Ongoing Quiz: <b class="text" style="color: black;"> {{questions[0].quiz.title}}</b></h1>
+                </ng-container>
+                <ng-container *ngFor="let q of questions;let i=index" class="mt10 card">
+
+                    <mat-card *ngIf="q.code" class="card">
+                        
+                    
+                    <mat-card-content><p> <b>Q {{i+1}}) </b> <span [innerHTML]="q.content"></span></p>
+                       
+                        <mat-divider> </mat-divider>
+                            <div class="row mt10">
+                                <div class="col-md-6">
+                                    <div color="primary" class="example-radio-group" [(ngModel)]="q.givenAnswer"></div>
+                                       
+                                        Test case 1 input:
+                                        {{q.option1
+                                        }}
+
+                                        
+
+                                        
+                                        Test case 2 input:
+                                        {{q.option2
+                                        }}
+                                        
+
+                                        
+                                        Test case 3 input:
+                                        {{q.option3
+                                        }}
+                                       
+
+                                       
+                                        Test case 4 input:
+                                        {{q.option4
+                                        }}
+                                        
+                                    
+                                    <iframe style='min-width:200%; min-height: 300%; border: none;'class="card ml10" src="https://www.online-ide.com/" loading="lazy" allow="clipboard-write" allowfullscreen referrerpolicy="unsafe-url" sandbox="allow-scripts allow-same-origin"></iframe>
+                                                                        
+        
+                                    
+                                    
+                                    
+                                    <!-- <input type="radio"
+                                    [value]="q.option1"
+                                    [name]="'i'"
+                                    [(ngModel)]="q.givenAnswer"
+                                    />{{q.option1}}
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio"
+                                    [value]="q.option2"
+                                    [name]="'i'" 
+                                    [(ngModel)]="q.givenAnswer">{{q.option2}}
+                                </div>
+                            </div>
+                            <div class="row mt10">
+                                <div class="col-md-6">
+                                    <input type="radio"
+                                    [value]="q.option3"
+                                    [name]="'i'" 
+                                    [(ngModel)]="q.givenAnswer">{{q.option3}}
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio"
+                                    [value]="q.option4"
+                                    [name]="'i'" 
+                                    [(ngModel)]="q.givenAnswer">{{q.option4}} -->
+                                </div>
+                            </div>
+                       
+                    </mat-card-content>
+                    </mat-card>
+                
+
+
+
+
+
+
+
+                
+                <!-- <div class="bootstrap-wrapper" *ngIf="!q.code" >
+                    <div class="row mt20">
+                        <iframe style='max-width:100%; border: none; height: 375px; width: 1200px;'class="card" src="https://www.online-ide.com/" loading="lazy" allow="clipboard-write" allowfullscreen referrerpolicy="unsafe-url" sandbox="allow-scripts allow-same-origin"></iframe>
+
+                    </div>
+                </div> -->
+
+
+                
+
+
+                </ng-container>
+
+               
+                <!-- <div class="container text-center mt20 mb20">
+                    <button mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;" [routerLink]="'/start-coding/'+qid">Go to coding round</button>
+                </div> -->
+
+
+
+
+
+
+                <div class="container text-center mt20 mb20">
+                    <button mat-raised-button (click)="showResultPage()" style="background-color: rgb(77, 75, 75); color: aliceblue;" class="mt20">Submit Coding round</button>
+                </div>
+                
+            </div>
+            <div class="col-md-2">
+                <mat-card class="card" style="margin-top: 60px;">
+                    <mat-card-header>
+                        <mat-card-title style="color: black;" class="text">Progress</mat-card-title>
+                        <mat-card-subtitle>Quiz will automatically get submitted when timer is <b>0:00</b></mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="mt10"><mat-spinner mode="determinate" [color]="color" [value]="(timer/(this.questions.length*1*60))*100" style="margin: auto;"></mat-spinner><h3 class="text-center">{{getFormattedTime()}}</h3></mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit && showResult" >
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <mat-card class="mt20">
+                <mat-card-header>
+                    <mat-card-title class="text">
+                        Quiz Result
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="mt10">
+                    <h2>Marks Got: {{marksGot}}</h2>
+                    <h2>Correct Answers: {{correctAnswers}}</h2>
+                    <h2>Questions Attempted: {{attempted}}</h2>
+                </mat-card-content>
+                <mat-action-list class="text-center mt10 mb10">
+                    
+                    <button mat-raised-button color="primary" class="ml20" [routerLink]="'/user-dashboard/0'">Home</button>
+                </mat-action-list>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit && !showResult" >
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <mat-card class="mt20">
+                <mat-card-header>
+                    <mat-card-title style="color: black;" class="text"><b>
+                        Quiz Result</b>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="mt10">
+                    <h2>you are not supposed to see this </h2>
+                </mat-card-content>
+                <mat-action-list class="text-center mt10 mb10">
+                    
+                    <button mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;"  class="ml20" [routerLink]="'/user-dashboard/0'">Home</button>
+                </mat-action-list>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

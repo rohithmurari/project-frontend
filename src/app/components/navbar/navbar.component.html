@@ -1,0 +1,49 @@
+<mat-toolbar style="background-color: rgb(77, 75, 75);">
+    <a
+    routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon style="color: white;" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </a>
+    <span><img src="../../../assets/p10-logo.png" class="logo-img"></span>
+    <span class="example-spacer"></span>
+    <a style="color: white;"
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+     Login
+    </a>
+    <a style="color: white;"
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr70 ml50" aria-label="Example icon-button with heart icon">
+        Register
+    </a>
+
+    <!-- <ng-container
+        *nfIf="login.getUserRole()=='ADMIN'; then adminLog; else userLog"></ng-container> -->
+    
+    <ng-template [ngIf]="isLoggedIn && user && login.getUserRole()=='ADMIN'">
+        <a style="color: white;"
+         mat-icon-button 
+         routerLink="/admin/profile" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+            {{user['username']}}
+        
+        </a>
+    </ng-template>
+ 
+    <ng-template [ngIf]="isLoggedIn && user && login.getUserRole()=='NORMAL'">
+        <a style="color: white;"
+        *ngIf="isLoggedIn && user"
+         mat-icon-button 
+         routerLink="/user-dashboard/0" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+            {{user['username']}}
+        
+        </a>
+    </ng-template>
+
+    <a style="color: white;"
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    [routerLink]="'/login'"
+     mat-icon-button class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+        Logout
+    </a>
+  </mat-toolbar>
+  

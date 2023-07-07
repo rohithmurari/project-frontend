@@ -1,0 +1,89 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="ml10 mt10">Adding new coding question to <b>{{qTitle}}</b> </h1>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle class="ml10 mb10">
+                        Enter the problem statement
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form (submit)="formSubmit()">
+                        <mat-form-field appearance="outline" class="w100">
+                            <mat-label>Write question content</mat-label>
+                            <textarea required rows="8" 
+                            [(ngModel)]="questionData.content"
+                            name="content"
+                            matInput placeholder="Enter here"></textarea>
+                        </mat-form-field>
+
+                        <!-- app.component.html -->
+<!-- 
+                        <ckeditor 
+                        [editor]="Editor" 
+                        data="<p>Write your question here</p>"
+                        name="content"
+                        class="ck-editor__editable"
+                        [(ngModel)]="questionData.content"
+                        ></ckeditor> -->
+
+
+                        <!-- <div class="row"> -->
+                            <div class="text-center">
+                                <mat-form-field appearance="outline" class="w50">
+                                    <mat-label>Input values for testcase 1</mat-label>
+                                    <input 
+                                    [(ngModel)]="questionData.option1"
+                                    name="option1"
+                                    required type="text" matInput/>
+                                </mat-form-field>
+                            </div>
+                            <div class="text-center">
+                                <mat-form-field appearance="outline" class="w50">
+                                    <mat-label>Input values for testcase 2</mat-label>
+                                    <input 
+                                    [(ngModel)]="questionData.option2"
+                                    name="option2"
+                                    required type="text" matInput/>
+                                </mat-form-field>
+                            </div>
+                        <!-- </div> -->
+
+                        <!-- <div class="row"> -->
+                            <div class="text-center">
+                                <mat-form-field appearance="outline" class="w50">
+                                    <mat-label>Input values for testcase 3</mat-label>
+                                    <input 
+                                    [(ngModel)]="questionData.option3"
+                                    name="option3"
+                                    required type="text" matInput/>
+                                </mat-form-field>
+                            </div>
+                            <div class="text-center">
+                                <mat-form-field appearance="outline" class="w50">
+                                    <mat-label>Input values for testcase 4</mat-label>
+                                    <input 
+                                    [(ngModel)]="questionData.option4"
+                                    name="option4"
+                                    required type="text" matInput/>
+                                </mat-form-field>
+                            </div>
+                        <!-- </div> -->
+                        <div class="text-center">
+                            <mat-form-field appearance="outline"  class="w100">
+                                <mat-label>Desired Output</mat-label>
+                                <textarea required rows="8" required [(ngModel)]="questionData.answer" name="answer"
+                                matInput placeholder="Enter here"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="container text-center">
+                            <button mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;">Add</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

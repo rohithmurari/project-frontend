@@ -1,0 +1,15 @@
+.text{
+    color: rgb(55,100,175);
+}
+
+.center{
+    margin-left: 50%;
+}
+
+.instructionCard{
+    background-color:rgb(235, 230, 230);
+    border: 3px;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 8px 0 rgba(238, 230, 230, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 10px;
+}

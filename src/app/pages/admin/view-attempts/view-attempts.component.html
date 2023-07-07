@@ -1,0 +1,21 @@
+<h2 class="mt10 ml10"> Attempts of Quiz {{qId}}</h2>
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+
+        
+
+            <mat-card *ngFor="let a of attempts;" class="mt20 attemptCard">
+                <mat-card-title class="ml10 mt10" style="padding-left: 12px;"> Username: {{a.user.username}}</mat-card-title>
+                <mat-card-content class="ml10">
+                    <p>
+                     <span>Number  of questions: {{a.attempted}}<br>Correct Answers: {{a.correctAnswers}}<br>Marks: {{a.marksGot}}</span>
+                    </p>
+                    
+                </mat-card-content>
+              
+
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ExamPortal - Home</title>
+
+</head>
+<body class="mainBody">
+  <!-- <header>
+    <h1>ExamPortal</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Exams</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header> -->
+  <main>
+    <section class="banner">
+      <h2>Welcome to ExamPortal</h2>
+      <p>Start your exam journey with us</p>
+      <button class="margin" mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;" [routerLink]="'/login'">Get Started</button>
+    </section>
+    <section class="features">
+      <h2>Key Features</h2>
+      <div class="feature">
+        <img style="opacity: 0.7;" src="../../../assets/admin.png" alt="Admin">
+        <h3>Admin features</h3>
+        <p>Add and Update the Exams and respective categories</p>
+      </div>
+      <div class="feature img">
+        <img  src="../../../assets/user.png" style="width: 100px; opacity: 0.7;" alt="User">
+        <h3>User Features</h3>
+        <p>Take the exams and get the results</p>
+      </div>
+      <div class="feature">
+        <img  src="../../../assets/results.png" style="width: 100px; margin-left: 10px; opacity: 0.7;" alt="Results">
+        <h3>Results</h3>
+        <p>Analyze your test results </p>
+      </div>
+    </section>
+    <!-- <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for the latest exam updates and news.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section> -->
+  </main>
+  <!-- <footer>
+    <p>&copy; 2023 ExamPortal. All rights reserved.</p>
+  </footer> -->
+</body>
+</html>
