@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  constructor(private userService:UserService,private snack:MatSnackBar){}
+  constructor(private userService:UserService,private snack:MatSnackBar,private _router:Router){}
 
   public user={
     username:'',
@@ -61,7 +62,10 @@ export class SignupComponent implements OnInit{
           confirmButtonText:'OK',
           confirmButtonColor:'#3085d6',
           showCancelButton:false
-        });
+        }).then((e)=>{
+          if(e.isConfirmed){
+            this._router.navigate(['/login']);
+          }});
       },
       (error)=>{
         console.log(error);
