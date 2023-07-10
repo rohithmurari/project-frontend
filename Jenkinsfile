@@ -3,6 +3,9 @@ pipeline {
     tools {
         maven 'maven'
     }
+    triggers {
+        pollSCM '* * * * *'
+    }
     environment{
         TERM = 'xterm'
     }
