@@ -27,6 +27,7 @@ pipeline {
         stage('Transfer build file'){
               steps{
               sh """echo 'admin123' | sudo -S chmod 777 /var/lib/jenkins/workspace/cicd-frontend/dist/examfront/*"""
+              sh """echo 'admin123' | sudo -S rm -rf /usr/share/nginx/html"""
               sh """echo 'admin123' | sudo -S mv /var/lib/jenkins/workspace/cicd-frontend/dist/examfront/* /usr/share/nginx/html"""
               sh """echo 'admin123' | sudo -S chmod 777 /usr/share/nginx/html/*"""
               sh """sudo systemctl restart nginx"""
