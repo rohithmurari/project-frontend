@@ -1,5 +1,7 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CanColor, ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
@@ -12,6 +14,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-quiz.component.css']
 })
 export class AddQuizComponent implements OnInit{
+  color:ThemePalette="primary";
+  checked = false;
+  disabled=false;
   categories=[
     // {
     //   cid:23,

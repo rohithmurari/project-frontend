@@ -96,7 +96,7 @@ import { StartCodingComponent } from './pages/user/start-coding/start-coding.com
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
-    CKEditorModule,
+    //CKEditorModule,
     MatRadioModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule,
