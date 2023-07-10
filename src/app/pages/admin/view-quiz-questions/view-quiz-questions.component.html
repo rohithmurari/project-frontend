@@ -6,6 +6,11 @@
             <div class="container text-center">
                 <button mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;" [routerLink]="'/admin/add-question/'+qId+'/'+qTitle">Add Question</button>
                 <button mat-raised-button class="ml20" style="background-color: rgb(77, 75, 75); color: aliceblue;" [routerLink]="'/admin/add-coding-question/'+qId+'/'+qTitle">Add Coding Question</button>
+                <input  id="fileUploadInput" (change)="selectFile($event)" style="display: none"  type="file">
+                <label for="fileUploadInput"   class="custom-file-input">
+                    Upload Questions
+                  </label>
+                 <!-- <button mat-raised-button type="file"  class="ml20" style="background-color: rgb(77, 75, 75); color: aliceblue;" >Upload Questions</button> -->
             </div>
 
             <mat-card *ngFor="let q of questions;let i=index" class="mt20 questionCard">

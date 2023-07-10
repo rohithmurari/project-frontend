@@ -5,3 +5,23 @@
     box-shadow: 0 4px 8px 0 rgba(238, 230, 230, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10px;
 }
+
+.custom-file-input {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: rgb(77, 75, 75);
+  color: aliceblue;
+  /* text-decoration: solid; */
+  font-weight:500;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* .custom-file-input:hover {
+  background-color: #aaa;
+}
+
+.custom-file-input:active {
+  background-color: #888;
+} */
