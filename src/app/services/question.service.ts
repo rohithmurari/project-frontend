@@ -38,6 +38,6 @@ export class QuestionService {
   }
 
   public uploadQuestion(formData:any){
-    return this._http.post('http://localhost:8080/question/upload',formData);
+    return this._http.post(baseUrl+'/question/upload',formData);
   }
 }

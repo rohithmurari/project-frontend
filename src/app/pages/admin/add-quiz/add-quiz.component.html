@@ -52,8 +52,7 @@
               name="active"
               [(ngModel)]="quizData.active"
               class="mt10"
-              [color]="'rgb(77, 75, 75)'"
-              [checked]="false"
+              [color]="color"
               >
             Publish Status
           </mat-slide-toggle>
@@ -62,15 +61,14 @@
               name="showResult"
               [(ngModel)]="quizData.showResult"
               class="mt10"
-              [color]="'rgb(77, 75, 75)'"
-              [checked]="false"
-              >
+              [color]="color"
+               >
             Show Results
           </mat-slide-toggle>
            
              <br>
 
-                <div class="container text-center mt15" style="margin-top: 10px;">
+                <div class="container text-center mt20" style="margin-top: 10px;">
                     <button mat-raised-button style="background-color: rgb(77, 75, 75); color: aliceblue;" type="submit">Add</button>
                 </div>
             </form>
