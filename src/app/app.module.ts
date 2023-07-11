@@ -46,6 +46,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ViewAttemptsComponent } from './pages/admin/view-attempts/view-attempts.component';
 import { AddCodingQuestionComponent } from './pages/admin/add-coding-question/add-coding-question.component';
 import { StartCodingComponent } from './pages/user/start-coding/start-coding.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 // import {ThemePalette} from '@angular/material/core';
 // import { MonacoEditorModule } from 'ngx-monaco-editor';
 // import { AceEditorModule } from 'ngx-ace-editor-wrapper';
@@ -79,6 +80,7 @@ import { StartCodingComponent } from './pages/user/start-coding/start-coding.com
     ViewAttemptsComponent,
     AddCodingQuestionComponent,
     StartCodingComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,12 +18,19 @@
 
     <!-- <ng-container
         *nfIf="login.getUserRole()=='ADMIN'; then adminLog; else userLog"></ng-container> -->
-    
+        <a style="color: white;"
+        (click)="logout()"
+        *ngIf="isLoggedIn"
+        [routerLink]="'/login'"
+         mat-icon-button class="example-icon favorite-icon mr10 ml20" aria-label="Example icon-button with heart icon">
+            Logout
+        </a>
+
     <ng-template [ngIf]="isLoggedIn && user && login.getUserRole()=='ADMIN'">
         <a style="color: white;"
          mat-icon-button 
          routerLink="/admin/profile" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
-            {{user['username']}}
+        <mat-icon style="color: white;font-size: 114%;margin-left: 20%;" aria-hidden="false" fontIcon="manage_accounts"></mat-icon>
         
         </a>
     </ng-template>
@@ -32,18 +39,11 @@
         <a style="color: white;"
         *ngIf="isLoggedIn && user"
          mat-icon-button 
-         routerLink="/user-dashboard/0" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
-            {{user['username']}}
-        
+         [routerLink]="'user-dashboard/user-profile/'+id" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+         <mat-icon style="color: white;font-size: 114%;margin-left: 20%;" aria-hidden="false" fontIcon="perm_identity"></mat-icon> 
         </a>
     </ng-template>
 
-    <a style="color: white;"
-    (click)="logout()"
-    *ngIf="isLoggedIn"
-    [routerLink]="'/login'"
-     mat-icon-button class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
-        Logout
-    </a>
+   
   </mat-toolbar>
   

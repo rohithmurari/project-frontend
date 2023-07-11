@@ -23,6 +23,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import { ViewAttemptsComponent } from './pages/admin/view-attempts/view-attempts.component';
 import { AddCodingQuestionComponent } from './pages/admin/add-coding-question/add-coding-question.component';
 import { StartCodingComponent } from './pages/user/start-coding/start-coding.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -97,7 +98,11 @@ const routes: Routes = [
       },{
         path:'instructions/:quid',
         component:InstructionsComponent
-      },
+      },{
+        path:"user-profile/:id",
+          component:UserProfileComponent,
+          canActivate:[NormalGuard],
+      }
     ]
   },{
       path:"start/:quid",

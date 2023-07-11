@@ -86,7 +86,7 @@ export class LoadQuizComponent implements OnInit{
     this.u_data=JSON.parse(this.u_data)
     console.log(this.u_data.id);
     
-    this._start.getAttemptsByUser(qid,this.u_data.id).subscribe((data:any)=>{
+    this._start.getAttemptsByUserAndQuiz(qid,this.u_data.id).subscribe((data:any)=>{
       // console.log(data[0].qAttempt);
       try{
         if(data[0].qAttempt<1 || data[0].qAttempt==null || data[0].qAttempt==0 || data==undefined){

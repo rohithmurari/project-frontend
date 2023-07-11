@@ -55,6 +55,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-right:70px !important;
 }
 
+.mr100{
+    margin-right:100px !important;
+}
 
 
 .m{
