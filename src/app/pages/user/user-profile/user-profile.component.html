@@ -1,0 +1,73 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2">
+                <app-sidebar-user></app-sidebar-user>
+            </div> -->
+            <!-- <div class="col-md-10">
+                <router-outlet></router-outlet>
+            </div> -->
+
+
+
+
+            
+            <div class="col-md-12">
+                <mat-card *ngIf="user" class="profileCard">
+                <h1 class="ml20 text-center" style="margin-top: 10px;">Your Profile Details</h1>
+                <mat-card-content>
+                <div class="bootstrap-wrapper">
+                    <div class="container">
+                        <div class="container text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg"
+                            alt=" "
+                            class="profile-image"/>
+                            <span *ngIf="user"><h1 class="mt20">{{user['firstName']}}  {{user['lastName']}}</h1></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <table class="table text-center">
+                                    <tr *ngIf="user['username']">
+                                        <td>Username</td>
+                                        <td>{{user['username']}}</td>
+                                    </tr>
+                                    <tr  *ngIf="user['id']">
+                                        <td>UserID</td>
+                                        <td>{{user['id']}}</td>
+                                    </tr>
+                                    <tr  *ngIf="user['enabled']">
+                                        <td>Status</td>
+                                        <td>{{user['enabled']?"ACTIVE":"NOT ACTIVE"}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </mat-card-content>
+                                <!-- <mat-card-actions class="m">
+                                    <button mat-raised-button color="primary">Update</button>
+                            
+                                </mat-card-actions> -->
+                </mat-card>
+    
+            </div>
+        </div>
+        <h1 class="mt20 ml10">Attempted Quizzes</h1>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let a of attempts;">
+                <mat-card  class="mt20 profileCard">
+                <mat-card-title class="ml10 mt10" style="padding-left: 12px;"> Quiz Title: {{a.quiz.title}}</mat-card-title>
+                <mat-card-content class="ml10">
+                    <p *ngIf="a.quiz.showResult">
+                    <span>Number  of questions: {{a.attempted}}<br>Correct Answers: {{a.correctAnswers}}<br>Marks: {{a.marksGot}}</span>
+                    </p>
+                    <p *ngIf="!a.quiz.showResult">
+                    <span>Attempted once</span>
+                    </p>
+                </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

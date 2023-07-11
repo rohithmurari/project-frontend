@@ -1,11 +1,17 @@
 <mat-card class="sidebarCard">
     <mat-action-list>
+        
         <div mat-subheader>Categories</div>
+       
         <button routerLink="/user-dashboard/0" mat-list-item>
             <mat-icon mat-list-icon>category</mat-icon>All Quizzes
         </button>
         <button [routerLink]="'/user-dashboard/'+c.cid" mat-list-item *ngFor="let c of categories">
             <mat-icon mat-list-icon>quiz</mat-icon>{{c.title}}
+        </button>
+        <hr>
+        <button [routerLink]="'user-profile/'+id" mat-list-item>
+            <mat-icon mat-list-icon>account_circle</mat-icon>Profile
         </button>
     </mat-action-list>
 </mat-card>

@@ -16,7 +16,12 @@ export class StartService {
     return this.http.get(baseUrl+'/result/'+quid);
   }
 
-  public getAttemptsByUser(quid:any,id:any){
+  public getAttemptsByUserAndQuiz(quid:any,id:any){
     return this.http.get(baseUrl+'/result/'+quid+'/'+id);
   }
+
+  public getAttemptsByUser(id:any){
+    return this.http.get(baseUrl+'/result/user/'+id);
+  }
+
 }

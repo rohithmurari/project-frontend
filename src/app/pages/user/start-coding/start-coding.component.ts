@@ -216,7 +216,7 @@ export class StartCodingComponent implements OnInit {
 
 
   showResultPage(){
-    this._start.getAttemptsByUser(this.qid,this.resultData.user.id).subscribe((data:any)=>{
+    this._start.getAttemptsByUserAndQuiz(this.qid,this.resultData.user.id).subscribe((data:any)=>{
       
      
       this.marksGot=data[0].marksGot;
